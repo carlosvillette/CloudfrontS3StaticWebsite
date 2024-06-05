@@ -1,8 +1,3 @@
-variable "region" {
-  type = string
-  default = "us-east-1"
-}
-
 variable "s3_name" {
   description = "Name of the S3 bucket"
   type = string
@@ -11,7 +6,6 @@ variable "s3_name" {
 variable "index_document" {
   description = "the html file that will be used for the static website"
   type = string
-  default = "index.html"
 }
 
 variable "content_types" {
@@ -29,17 +23,17 @@ variable "content_folder_name" {
   type = string
 }
 
-variable "default_root_object" {
+variable "cloudfront_distribution_arn" {
+  description = "the arn value for the cloudfront distribution"
   type = string
-  default = "index.html"
 }
 
-variable "minimum_protocol_version" {
+variable "policy" {
+  description = "the policy for the s3 bucket"
   type = string
-  default = "TLSv1.2_2021"
 }
 
-variable "price_class" {
+variable "path" {
+  description = "path to the folder holding s3 assets"
   type = string
-  default = "PriceClass_100" # only available in N. America, Europe, and Israel with this price class
 }
